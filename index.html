@@ -1,271 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Welcome</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Developer portfolio — Cyber-Modern Technical Mono. Full-stack Java engineer with Spring Boot, Kafka, and distributed systems expertise." />
+  <title>DEV.PORTFOLIO // SYSTEM_ONLINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <h2>Portfolio</h2>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="theme-toggle">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                </div>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight" spellcheck="false">NITESH MISHRA</span></h1>
-                <h2>Frontend Developer & UI/UX Designer</h2>
-                <p>Showcasing my expertise in modern web design, I create intuitive, responsive, and visually stunning front-end experiences that captivate users and elevate brands</p>
-                <div class="cta-buttons">
-                    <a href="#portfolio" class="btn primary-btn">View My Work</a>
-                    <a href="#contact" class="btn secondary-btn">Hire Me</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-container">
-                    <img src="img/profile.jpg" alt="Nitesh Mishra">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  ANIMATED MATRIX RAIN BACKGROUND               -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <canvas id="matrix-rain" aria-hidden="true"></canvas>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Who am I?</h3>
-                    <p>I'm a passionate frontend developer with 1 years of experience creating responsive and user-friendly websites. I love turning complex problems into simple, beautiful and intuitive designs.</p>
-                    <p>My goal is to build products that are not only aesthetically pleasing but also functional and accessible to everyone.</p>
-                    <a href="img/NiteshMishraResume1.pdf" class="btn primary-btn">Download CV</a>
-                </div>
-                <div class="skills">
-                    <h3>My Skills</h3>
-                    <div class="skill-bars">
-                        <div class="skill">
-                            <span>HTML/CSS</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 95%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Nodejs</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>UI/UX Design</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span>Git/Github</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  BOOT SCREEN OVERLAY                           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="boot-screen" role="status" aria-live="polite">
+    <div class="boot-content">
+      <div class="boot-logo">
+        <span class="boot-brackets">[</span>
+        <span class="boot-title">SYS</span>
+        <span class="boot-brackets">]</span>
+      </div>
+      <div id="boot-log" class="boot-log"></div>
+      <div class="boot-bar-wrap">
+        <div id="boot-progress" class="boot-bar"></div>
+      </div>
+    </div>
+  </div>
 
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Portfolio</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="spa">SPA</button>
-                <button class="filter-btn" data-filter="ui">UI/UX Design</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img src="img/portfolio/project2.jpg" alt="Project 2">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>E-commerce Website</h3>
-                                <p>Web Design</p>
-                                <p class="project-description">A responsive e-commerce platform with shopping cart and payment integration.</p>
-                                <a href="" class="btn view-project">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="spa">
-                    <div class="portfolio-image">
-                        <img src="img/portfolio/project1.jpg" alt="Project 1">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Replica of Modern Nike Website</h3>
-                                <p>SPA</p>
-                                <p class="project-description">A React-based single page application for managing tasks with drag-and-drop functionality.</p>
-                                <a href="https://nike-lemon-ten.vercel.app/" class="btn view-project">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="spa">
-                    <div class="portfolio-image">
-                        <img src="img/portfolio/project4.jpg" alt="Project 3">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Portfolio Website</h3>
-                                <p>SPA</p>
-                                <p class="project-description">A sleek portfolio website showcasing creative work with smooth animations and transitions.</p>
-                                <a href="https://portfolio-nitesh-mishras-projects-fdfac849.vercel.app/" class="btn view-project">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img src="img/portfolio/project3.jpg" alt="Project 4">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Author Page</h3>
-                                <p>Web Design</p>
-                                <p class="project-description">Crafting compelling stories that captivate hearts and minds, I weave words into immersive experiences that resonate beyond the pages.</p>
-                                <a href="https://author-page-sx3j.vercel.app/" class="btn view-project">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="spa">
-                    <div class="portfolio-image">
-                        <img src="img/portfolio/project5.jpg" alt="Project 5">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Blockfund Website Using Blockchain Technology</h3>
-                                <p>SPA</p>
-                                <p class="project-description">Blockfund uses blockchain to enable secure, transparent, and efficient financial transactions globally.</p>
-                                <a href="#" class="btn view-project">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img src="img/portfolio/project6.jpg" alt="Project 6">
-                        <div class="overlay">
-                            <div class="overlay-content">
-                                <h3>Modern Food Delivery Website</h3>
-                                <p>Web Design</p>
-                                <p class="project-description">Effortlessly delivering fresh, delicious meals to your doorstep, combining convenience, variety, and speedy service you can trust.</p>
-                                <a href="#" class="btn view-project">View Project</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  MAIN LAYOUT                                   -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="app" class="app hidden">
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>niteshmishra6402@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>9621606028</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Thane(W), Maharashtra, India</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/nitesh--mishra--0604--/"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/nims-creation"><i class="fab fa-github"></i></a>
-                        <a href="https://leetcode.com/u/Nitesh_06/"><i class="fab fa-code"></i></a>
-                        <a href="https://www.instagram.com/nitesh0604/"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ── LEFT SIDEBAR ─────────────────────────── -->
+    <aside id="sidebar" class="sidebar" role="complementary" aria-label="Terminal Sidebar">
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Portfolio. All information are Genuine.</p>
+      <!-- Top nav bar -->
+      <header class="sidebar-header">
+        <span class="sid-title">TERMINAL <span class="blink">▋</span></span>
+        <div class="status-lights" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
         </div>
-    </footer>
+      </header>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+      <!-- Scrolling keyword rain -->
+      <section class="keyword-ticker" aria-label="Java keywords stream" aria-hidden="true">
+        <div id="keyword-stream" class="keyword-stream"></div>
+      </section>
+
+      <!-- Divider -->
+      <div class="sid-divider" aria-hidden="true"><span>── IDENTITY_MODULE ──</span></div>
+
+      <!-- About Me / System Log -->
+      <section class="system-log" aria-label="About Me">
+        <p class="log-line"><span class="log-prompt">&gt;</span> <span class="log-key">NAME</span><span
+            class="log-sep">:</span> Nitesh Mishra</p>
+        <p class="log-line"><span class="log-prompt">&gt;</span> <span class="log-key">ROLE</span><span
+            class="log-sep">:</span> Full-Stack Engineer</p>
+        <p class="log-line"><span class="log-prompt">&gt;</span> <span class="log-key">STACK</span><span
+            class="log-sep">:</span> Java . Spring Boot · Kafka · React · RAG · Kubernetes </p>
+        <p class="log-line"><span class="log-prompt">&gt;</span> <span class="log-key">EXP</span><span
+            class="log-sep">:</span> Distributed Systems</p>
+        <p class="log-line"><span class="log-prompt">&gt;</span> <span class="log-key">LANG</span><span
+            class="log-sep">:</span> Java · C++ · JavaScript · TypeScript · SQL · PostgreSQL</p>
+        <p class="log-line"><span class="log-prompt">&gt;</span> <span class="log-key">LOC</span><span
+            class="log-sep">:</span> Thane MH / India</p>
+        <p class="log-line log-dim"><span class="log-prompt">&gt;</span> STATUS<span class="log-sep">:</span> <span
+            class="status-open">OPEN TO WORK</span></p>
+      </section>
+
+      <!-- Divider -->
+      <div class="sid-divider" aria-hidden="true"><span>── CONTACT ──</span></div>
+
+      <!-- Social links -->
+      <nav class="social-links" aria-label="Social links">
+        <a href="https://github.com/nims-creation" id="link-github" class="social-link" target="_blank" rel="noopener">
+          <span class="sl-icon">⬡</span> GITHUB
+        </a>
+        <a href="https://www.linkedin.com/in/nitesh--mishra--0604--/" id="link-linkedin" class="social-link"
+          target="_blank" rel="noopener">
+          <span class="sl-icon">⬡</span> LINKEDIN
+        </a>
+        <a href="mailto:niteshmishracs@gmail.com" id="link-email" class="social-link">
+          <span class="sl-icon">⬡</span> EMAIL
+        </a>
+        <a href="#" id="link-resume" class="social-link social-link--accent">
+          <span class="sl-icon">⬡</span> RESUME.PDF
+        </a>
+      </nav>
+
+      <!-- Divider -->
+      <div class="sid-divider" aria-hidden="true"><span>── SYSTEM_LOG ──</span></div>
+
+      <!-- Live log output -->
+      <section class="live-log" aria-label="Live system log" aria-live="polite">
+        <div id="live-log-output" class="live-log-output"></div>
+        <p class="log-cursor-line"><span class="log-prompt">&gt;</span> <span id="cursor-blink"
+            class="cursor-blink">█</span></p>
+      </section>
+
+      <!-- System metrics -->
+      <footer class="sidebar-footer" aria-hidden="true">
+        <div class="metric">
+          <span class="metric-label">CPU</span>
+          <div class="metric-bar">
+            <div id="cpu-bar" class="metric-fill"></div>
+          </div>
+          <span id="cpu-val" class="metric-val">--</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">MEM</span>
+          <div class="metric-bar">
+            <div id="mem-bar" class="metric-fill"></div>
+          </div>
+          <span id="mem-val" class="metric-val">--</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">NET</span>
+          <div class="metric-bar">
+            <div id="net-bar" class="metric-fill"></div>
+          </div>
+          <span id="net-val" class="metric-val">--</span>
+        </div>
+        <p class="uptime" id="uptime">UPTIME: 00:00:00</p>
+      </footer>
+
+    </aside>
+
+    <!-- ── DATA PULSE LINE ───────────────────────── -->
+    <div id="pulse-line" class="pulse-line" aria-hidden="true">
+      <div class="pulse-packet" id="packet-1"></div>
+      <div class="pulse-packet" id="packet-2"></div>
+      <div class="pulse-packet" id="packet-3"></div>
+    </div>
+
+    <!-- ── MAIN FEED ─────────────────────────────── -->
+    <main id="main-feed" class="main-feed" role="main" aria-label="Project Feed">
+
+      <!-- Feed header / nav -->
+      <div class="feed-header">
+        <div class="feed-tabs">
+          <button id="tab-about" class="feed-tab feed-tab--active" data-tab="about">ABOUT</button>
+          <button id="tab-projects" class="feed-tab" data-tab="projects">PROJECTS</button>
+          <button id="tab-skills" class="feed-tab" data-tab="skills">SKILLS</button>
+          <button id="tab-commits" class="feed-tab" data-tab="commits">COMMIT_FEED</button>
+        </div>
+        <div class="feed-clock" id="feed-clock" aria-live="off"></div>
+      </div>
+
+      <!-- ── TAB: ABOUT ── -->
+      <section id="tab-content-about" class="tab-content tab-content--active" aria-label="About Me">
+        <div class="about-layout">
+
+          <!-- Profile Image Column -->
+          <div class="about-image-col">
+            <div class="about-img-frame" id="about-img-frame" title="Click to upload your photo">
+              <div class="about-img-ring-outer"></div>
+              <div class="about-img-ring-inner"></div>
+              <div class="about-img-circle">
+                <img id="about-photo" class="about-photo" src="profile_image.jpeg" alt="Profile photo" style="display:block" />
+              </div>
+              <div class="about-img-scan-line" aria-hidden="true"></div>
+              <div class="about-img-corner tl" aria-hidden="true"></div>
+              <div class="about-img-corner tr" aria-hidden="true"></div>
+              <div class="about-img-corner bl" aria-hidden="true"></div>
+              <div class="about-img-corner br" aria-hidden="true"></div>
+            </div>
+            <p class="about-img-status" id="about-img-status">&gt; IDENTITY_VERIFIED</p>
+          </div>
+
+          <!-- Bio Column -->
+          <div class="about-bio-col">
+            <span class="about-badge">FULL_STACK_DEVELOPER.class</span>
+            <h2 class="about-name">
+              <span class="about-fn">&lt;Nitesh</span>
+              <span class="about-ln"> Mishra/&gt;</span>
+            </h2>
+            <p class="about-role">&gt; Java Engineer &middot; Spring Boot &middot; Distributed Systems</p>
+            <p class="about-desc">
+              Passionate about building scalable, production-grade systems. Specialising in
+              distributed, event-driven architectures with Spring Boot, Apache Kafka and
+              cloud-native deployments. Always engineering for performance, reliability and impact.
+            </p>
+
+            <div class="about-info-grid">
+              <div class="abi"><span class="abi-key">LOCATION</span><span class="abi-val">Thane MH / India</span></div>
+              <div class="abi"><span class="abi-key">EXPERIENCE</span><span class="abi-val">1+ Years</span></div>
+              <div class="abi"><span class="abi-key">EDUCATION</span><span class="abi-val">B.Tech (CSE)</span></div>
+              <div class="abi"><span class="abi-key">STATUS</span><span class="abi-val status-open">OPEN TO WORK</span>
+              </div>
+              <div class="abi"><span class="abi-key">GITHUB</span><span class="abi-val"><a
+                    href="https://github.com/nims-creation" target="_blank" rel="noopener"
+                    class="abi-link">github.com/nims-creation</a></span></div>
+              <div class="abi"><span class="abi-key">EMAIL</span><span class="abi-val"><a
+                    href="mailto:niteshmishracs@gmail.com" class="abi-link">niteshmishracs@gmail.com</a></span></div>
+            </div>
+
+            <div class="about-actions">
+              <button id="about-view-projects" class="btn-solid"
+                onclick="document.getElementById('tab-projects').click()">VIEW PROJECTS &rarr;</button>
+              <a href="mailto:niteshmishracs@gmail.com" class="btn-ghost">HIRE ME</a>
+              <a href="resume.pdf" id="about-resume-dl" class="btn-ghost">RESUME.PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── TAB: PROJECTS ── -->
+      <section id="tab-content-projects" class="tab-content" aria-label="Projects">
+
+        <!-- Hero Banner -->
+        <div class="hero-banner" id="hero-banner">
+          <div class="hero-top-bar">
+            <span class="hero-bar-label">NITESH_MISHRA.profile</span>
+            <span class="hero-bar-dots">● ● ●</span>
+          </div>
+          <div class="hero-body">
+            <div class="hero-left">
+              <div class="hero-tag">FULL-STACK ENGINEER</div>
+              <h1 class="hero-name">
+                <span class="hero-name-prefix">&lt;</span>NITESH<span class="hero-name-suffix">/&gt;</span>
+              </h1>
+              <div id="hero-typewriter" class="hero-typewriter" aria-live="polite"></div>
+            </div>
+            <div class="hero-right" aria-hidden="true">
+              <div class="hero-stat-grid">
+                <div class="hero-stat"><span class="hs-val">5+</span><span class="hs-lbl">PROJECTS</span></div>
+                <div class="hero-stat"><span class="hs-val">500</span><span class="hs-lbl">COMMITS</span></div>
+                <div class="hero-stat"><span class="hs-val">50K+</span><span class="hs-lbl">LINES</span></div>
+                <div class="hero-stat"><span class="hs-val">99.8%</span><span class="hs-lbl">UPTIME</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 1 -->
+        <article id="project-1" class="project-card" data-tags="Tech1,Tech2,Tech3">
+          <div class="card-glow" aria-hidden="true"></div>
+
+          <header class="card-header">
+            <span class="card-badge">WEB APP</span>
+            <h2 class="card-title">Staysoul</h2>
+            <span class="card-status card-status--live">● LIVE</span>
+          </header>
+
+          <p class="card-desc">
+            A comprehensive, full-stack hotel management and booking system inspired by Airbnb. Features dynamic
+            pricing, secure authentication (JWT & Google OAuth), interactive mapping, premium UI animations, and
+            seamless Stripe payments.
+          </p>
+
+          <div class="card-tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">React</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">Cloudinary</span>
+            <span class="tag">Framer Motion</span>
+            <span class="tag">JWT</span>
+            <span class="tag">Google OAuth</span>
+            <span class="tag">css</span>
+            <span class="tag">Render</span>
+            <span class="tag">Vercel</span>
+
+          </div>
+
+          <div class="card-footer">
+            <div class="card-stats">
+              <span class="stat"><span class="stat-label">COMMITS</span> <span class="stat-val"
+                  data-target="100">110+</span></span>
+              <span class="stat"><span class="stat-label">USERS</span> <span class="stat-val"
+                  data-target="5000">1000+</span></span>
+            </div>
+            <div class="card-actions">
+              <a href="https://stay-soul.vercel.app/" target="_blank" class="btn-ghost">DEMO</a>
+              <a href="https://github.com/nims-creation/staysoul" target="_blank" class="btn-solid">{ CODE }</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 2 -->
+        <article id="project-2" class="project-card" data-tags="Tech1,Tech2,Tech3">
+          <div class="card-glow" aria-hidden="true"></div>
+
+          <header class="card-header">
+            <span class="card-badge card-badge--blue">FULLSTACK</span>
+            <h2 class="card-title">Schedulo</h2>
+            <span class="card-status card-status--live">● LIVE</span>
+          </header>
+
+          <p class="card-desc">
+            Schedulo is a multi-tenant SaaS platform that automates the creation of complex timetables.
+          </p>
+
+          <div class="card-tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">React</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Resend/ClickSend/Twilio</span>
+            <span class="tag">JWT</span>
+            <span class="tag">Google OAuth</span>
+            <span class="tag">css</span>
+            <span class="tag">Render</span>
+            <span class="tag">Stripe</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Swagger</span>
+          </div>
+
+          <div class="card-footer">
+            <div class="card-stats">
+              <span class="stat"><span class="stat-label">COMMITS</span> <span class="stat-val"
+                  data-target="150">90+</span></span>
+              <span class="stat"><span class="stat-label">USERS</span> <span class="stat-val"
+                  data-target="2000">5000+</span></span>
+            </div>
+            <div class="card-actions">
+              <a href="https://schedulo-frontend.onrender.com/" target="_blank" class="btn-ghost">DEMO</a>
+              <a href="https://github.com/nims-creation/schedulo" target="_blank" class="btn-solid">{ CODE }</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 3 -->
+        <article id="project-3" class="project-card" data-tags="Tech1,Tech2,Tech3">
+          <div class="card-glow" aria-hidden="true"></div>
+
+          <header class="card-header">
+            <span class="card-badge card-badge--purple">BACKEND</span>
+            <h2 class="card-title">BuildSync</h2>
+            <span class="card-status card-status--dev">◌ WIP</span>
+          </header>
+
+          <p class="card-desc">
+            Your project description here. Explain what it does, what problem it solves, and the core technologies you
+            used to build it. Make it punchy.
+          </p>
+
+          <div class="card-tags">
+            <span class="tag">Tech1</span>
+            <span class="tag">Tech2</span>
+            <span class="tag">Tech3</span>
+            <span class="tag">Tech4</span>
+          </div>
+
+          <div class="card-footer">
+            <div class="card-stats">
+              <span class="stat"><span class="stat-label">COMMITS</span> <span class="stat-val"
+                  data-target="80">0</span></span>
+              <span class="stat"><span class="stat-label">UPTIME</span> <span class="stat-val">99%</span></span>
+            </div>
+            <div class="card-actions">
+              <a href="#" target="_blank" class="btn-ghost">DEMO</a>
+              <a href="#" target="_blank" class="btn-solid">{ CODE }</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 4 -->
+        <article id="project-4" class="project-card" data-tags="Tech1,Tech2,Tech3">
+          <div class="card-glow" aria-hidden="true"></div>
+
+          <header class="card-header">
+            <span class="card-badge">OPEN SOURCE</span>
+            <h2 class="card-title">YOUR_PROJECT_NAME_4</h2>
+            <span class="card-status card-status--live">● LIVE</span>
+          </header>
+
+          <p class="card-desc">
+            Your project description here. Explain what it does, what problem it solves, and the core technologies you
+            used to build it. Make it punchy.
+          </p>
+
+          <div class="card-tags">
+            <span class="tag">Tech1</span>
+            <span class="tag">Tech2</span>
+            <span class="tag">Tech3</span>
+            <span class="tag">Tech4</span>
+          </div>
+
+          <div class="card-footer">
+            <div class="card-stats">
+              <span class="stat"><span class="stat-label">COMMITS</span> <span class="stat-val"
+                  data-target="300">0</span></span>
+              <span class="stat"><span class="stat-label">STARS</span> <span class="stat-val"
+                  data-target="150">0</span></span>
+            </div>
+            <div class="card-actions">
+              <a href="#" target="_blank" class="btn-ghost">DEMO</a>
+              <a href="#" target="_blank" class="btn-solid">{ CODE }</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ── TAB: SKILLS ── -->
+      <section id="tab-content-skills" class="tab-content" aria-label="Skills">
+        <div class="skills-grid">
+          <div class="skill-category" id="skill-backend">
+            <h3 class="skill-cat-title"><span class="cat-bracket">[</span> BACKEND <span class="cat-bracket">]</span>
+            </h3>
+            <div class="skill-bars">
+              <div class="skill-row"><span class="skill-name">Java</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="92"></div>
+                </div><span class="skill-pct">92%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Spring Boot</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="88"></div>
+                </div><span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Hibernate/JPA</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="82"></div>
+                </div><span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Apache Kafka</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="75"></div>
+                </div><span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">REST / gRPC</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="80"></div>
+                </div><span class="skill-pct">80%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category" id="skill-frontend">
+            <h3 class="skill-cat-title"><span class="cat-bracket">[</span> FRONTEND <span class="cat-bracket">]</span>
+            </h3>
+            <div class="skill-bars">
+              <div class="skill-row"><span class="skill-name">React</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="85"></div>
+                </div><span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">JavaScript</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="78"></div>
+                </div><span class="skill-pct">78%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Vite</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="80"></div>
+                </div><span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">CSS / Sass</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="70"></div>
+                </div><span class="skill-pct">70%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category" id="skill-infra">
+            <h3 class="skill-cat-title"><span class="cat-bracket">[</span> INFRA / DB <span class="cat-bracket">]</span>
+            </h3>
+            <div class="skill-bars">
+              <div class="skill-row"><span class="skill-name">PostgreSQL</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="85"></div>
+                </div><span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Redis</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="72"></div>
+                </div><span class="skill-pct">72%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Docker</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="74"></div>
+                </div><span class="skill-pct">74%</span>
+              </div>
+              <div class="skill-row"><span class="skill-name">Git / CI-CD</span>
+                <div class="skill-track">
+                  <div class="skill-bar" data-skill="82"></div>
+                </div><span class="skill-pct">82%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech constellation -->
+        <div class="tech-tags-cloud" id="tech-cloud">
+          <span class="tech-cloud-tag" style="--delay:0s">Java</span>
+          <span class="tech-cloud-tag" style="--delay:.1s">Spring Boot</span>
+          <span class="tech-cloud-tag" style="--delay:.15s">Kafka</span>
+          <span class="tech-cloud-tag" style="--delay:.2s">React</span>
+          <span class="tech-cloud-tag" style="--delay:.25s">TypeScript</span>
+          <span class="tech-cloud-tag" style="--delay:.3s">PostgreSQL</span>
+          <span class="tech-cloud-tag" style="--delay:.35s">Redis</span>
+          <span class="tech-cloud-tag" style="--delay:.4s">Docker</span>
+          <span class="tech-cloud-tag" style="--delay:.45s">gRPC</span>
+          <span class="tech-cloud-tag" style="--delay:.5s">REST API</span>
+          <span class="tech-cloud-tag" style="--delay:.55s">Hibernate</span>
+          <span class="tech-cloud-tag" style="--delay:.6s">JWT</span>
+          <span class="tech-cloud-tag" style="--delay:.65s">OAuth2</span>
+          <span class="tech-cloud-tag" style="--delay:.7s">Nginx</span>
+          <span class="tech-cloud-tag" style="--delay:.75s">Git</span>
+          <span class="tech-cloud-tag" style="--delay:.8s">Linux</span>
+          <span class="tech-cloud-tag" style="--delay:.85s">Maven</span>
+          <span class="tech-cloud-tag" style="--delay:.9s">Supabase</span>
+          <span class="tech-cloud-tag" style="--delay:.95s">Vercel</span>
+          <span class="tech-cloud-tag" style="--delay:1s">Render</span>
+        </div>
+      </section>
+
+      <!-- ── TAB: COMMIT FEED ── -->
+      <section id="tab-content-commits" class="tab-content" aria-label="Live Commit Feed">
+        <div class="commit-feed" id="commit-feed-list">
+          <!-- dynamically populated -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="main.js"></script>
 </body>
-</html> 
+
+</html>
